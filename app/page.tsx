@@ -1,4 +1,6 @@
+'use client';
 import FeedCard from "@/components/FeedCard";
+import { GoogleLogin } from "@react-oauth/google";
 import Image from "next/image";
 import { BiBell, BiBookmarks, BiEnvelope, BiHash, BiHomeCircle, BiUser } from "react-icons/bi";
 import { BsTwitterX } from "react-icons/bs";
@@ -61,12 +63,20 @@ export default function Home() {
         </div>
 
       </div>
-      <div className="col-span-6 border-r-[0.2px] border-l-[0.2px] border-white">
+      <div className="col-span-6 h-screen overflow-scroll scrollbar-none border-r-[0.2px] border-l-[0.2px] border-white">
         <FeedCard/>
         <FeedCard/>
-      </div>
-      <div className="col-span-3"></div>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
 
+      </div>
+      <div className="col-span-3">
+      <GoogleLogin onSuccess={c=>console.log(c)}/>
+      </div>
     </div>
     </>
   );
